@@ -1,6 +1,6 @@
 {
   "name": "@mindfry/protocol",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "MFBP (MindFry Binary Protocol) types and constants",
   "type": "module",
   "main": "./dist/index.js",

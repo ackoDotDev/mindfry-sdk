@@ -70,6 +70,8 @@ export interface CreateLineageOptions {
 export interface StimulateOptions {
   key: string
   delta: number
+  /** Stimulate flags (0x01=NO_PROPAGATE for surgical mode, default: auto-propagate) */
+  flags?: number
 }
 
 // ═══════════════════════════════════════════════════════════════
@@ -225,9 +227,14 @@ export class MindFry {
 
     /**
      * Stimulate a lineage (inject energy)
+     * @param options.flags - 0x00=auto-propagate (default), 0x01=NO_PROPAGATE
      */
     stimulate: async (options: StimulateOptions): Promise<void> => {
-      const payload = new PayloadBuilder().writeString(options.key).writeF32(options.delta).build()
+      const payload = new PayloadBuilder()
+        .writeString(options.key)
+        .writeF32(options.delta)
+        .writeU8(options.flags ?? 0)
+        .build()
 
       await this.send(OpCode.LINEAGE_STIMULATE, payload)
     },
