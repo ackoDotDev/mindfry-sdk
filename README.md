@@ -108,11 +108,20 @@ await brain.lineage.forget('fire')
 ### Bond (Association) Operations
 
 ```typescript
-// Create bond
+// Create bond with polarity
 await brain.bond.connect({
   from: 'fire',
   to: 'heat',
   strength: 0.8,
+  polarity: 1, // 1=Synergy (default), 0=Neutral, -1=Antagonism
+})
+
+// Antagonistic bond (inhibition)
+await brain.bond.connect({
+  from: 'fear',
+  to: 'peace',
+  strength: 1.0,
+  polarity: -1, // Fear suppresses peace
 })
 
 // Reinforce existing bond
