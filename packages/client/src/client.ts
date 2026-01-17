@@ -214,9 +214,11 @@ export class MindFry {
 
     /**
      * Get lineage details
+     * @param key - Lineage key
+     * @param flags - Optional QueryFlags (0x01=BYPASS, 0x02=INCLUDE_REPRESSED, 0x04=NO_SIDE_EFFECTS, 0x07=FORENSIC)
      */
-    get: async (key: string): Promise<LineageInfo> => {
-      const payload = new PayloadBuilder().writeString(key).build()
+    get: async (key: string, flags: number = 0): Promise<LineageInfo> => {
+      const payload = new PayloadBuilder().writeString(key).writeU8(flags).build()
       const response = await this.send(OpCode.LINEAGE_GET, payload)
       return this.parseLineageInfo(response)
     },
