@@ -473,6 +473,8 @@ export class MindFry {
 
   private parseLineageInfo(data: Uint8Array): LineageInfo {
     const reader = new PayloadReader(data)
+    // Skip response data type byte (0x02 = Lineage)
+    reader.readU8()
     return {
       id: reader.readString(),
       energy: reader.readF32(),
@@ -486,6 +488,8 @@ export class MindFry {
 
   private parseLineages(data: Uint8Array): LineageInfo[] {
     const reader = new PayloadReader(data)
+    // Skip response data type byte (0x03 = Lineages)
+    reader.readU8()
     const count = reader.readU32()
     const result: LineageInfo[] = []
 
@@ -506,6 +510,8 @@ export class MindFry {
 
   private parseNeighbors(data: Uint8Array): NeighborInfo[] {
     const reader = new PayloadReader(data)
+    // Skip response data type byte (0x04 = Neighbors)
+    reader.readU8()
     const count = reader.readU32()
     const result: NeighborInfo[] = []
 
@@ -522,6 +528,8 @@ export class MindFry {
 
   private parseStats(data: Uint8Array): StatsInfo {
     const reader = new PayloadReader(data)
+    // Skip response data type byte (0x05 = Stats)
+    reader.readU8()
     return {
       lineageCount: reader.readU32(),
       bondCount: reader.readU32(),
