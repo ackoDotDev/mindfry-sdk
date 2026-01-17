@@ -2,7 +2,7 @@
 
 > Official client libraries for **MindFry** - The World's First Ephemeral Graph Database
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: Apache](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![npm](https://img.shields.io/npm/v/@mindfry/client)](https://www.npmjs.com/package/@mindfry/client)
 
 ## What is MindFry?
@@ -208,4 +208,4 @@ const brain = new MindFry({
 
 ## License
 
-MIT © [Erdem Arslan](https://github.com/laphilosophia)
+Apache 2.0 © [Erdem Arslan](https://github.com/laphilosophia)
