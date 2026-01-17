@@ -1,0 +1,36 @@
+{
+  "name": "@mindfry/protocol",
+  "version": "0.1.0",
+  "description": "MFBP (MindFry Binary Protocol) types and constants",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/laphilosophia/mindfry-sdk",
+    "directory": "packages/protocol"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}

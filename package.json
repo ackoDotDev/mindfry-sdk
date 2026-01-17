@@ -1,0 +1,31 @@
+{
+  "name": "mindfry-sdk",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Official SDK packages for MindFry - The World's First Ephemeral Graph Database",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/laphilosophia/mindfry-sdk"
+  },
+  "author": "Erdem Arslan <erdemarslan@ymail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "test:integration": "pnpm -r test:integration",
+    "lint": "pnpm -r lint",
+    "clean": "pnpm -r clean"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0",
+    "prettier": "^3.4.0",
+    "eslint": "^9.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@9.15.0"
+}
