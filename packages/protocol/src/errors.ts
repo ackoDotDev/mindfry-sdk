@@ -10,6 +10,8 @@ export enum ErrorCode {
   INVALID_OPCODE = 0x01,
   /** Malformed payload */
   MALFORMED_PAYLOAD = 0x02,
+  /** Server warming up (resurrection in progress) */
+  WARMING_UP = 0x03,
   /** Lineage not found */
   LINEAGE_NOT_FOUND = 0x10,
   /** Lineage already exists */
