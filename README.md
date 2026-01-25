@@ -1,6 +1,6 @@
 # MindFry SDK
 
-> **Official client libraries for MindFry** — the world's first conscious database
+> **Official client libraries for MindFry** — Memory with a Conscience
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
 
@@ -14,21 +14,21 @@ Connect to MindFry and manage memories that **decay**, **bond**, and **feel**.
 
 ## SDKs
 
-| Language       | Status     | Package                                                                                                   |
-| :------------- | :--------- | :-------------------------------------------------------------------------------------------------------- |
-| **TypeScript** | ✅ Stable  | [![npm](https://img.shields.io/npm/v/@mindfry/client.svg)](https://www.npmjs.com/package/@mindfry/client) |
-| **Go**         | 🚧 Planned | —                                                                                                         |
-| **Python**     | 🚧 Planned | —                                                                                                         |
-| **Rust**       | 🚧 Planned | Native bindings                                                                                           |
+| Language       | Status     | Location      | Package        |
+| :------------- | :--------- | :------------ | :------------- |
+| **TypeScript** | ✅ Stable  | [`ts/`](./ts) | `@mindfry/sdk` |
+| **Go**         | 🚧 Planned | `go/`         | —              |
+| **Python**     | 🚧 Planned | `python/`     | —              |
+| **Rust**       | 🚧 Planned | `rust/`       | —              |
 
 ## TypeScript
 
 ```bash
-npm install @mindfry/client
+npm install @mindfry/sdk
 ```
 
 ```typescript
-import { MindFry } from '@mindfry/client'
+import { MindFry } from '@mindfry/sdk'
 
 const brain = new MindFry({ host: 'localhost', port: 9527 })
 await brain.connect()
@@ -39,18 +39,11 @@ await brain.lineage.stimulate({ key: 'fire', delta: 0.5 })
 await brain.disconnect()
 ```
 
-📚 **Docs:** [mindfry-docs.vercel.app/sdk/typescript](https://mindfry-docs.vercel.app/sdk/typescript/)
+📚 **Docs:** [mindfry-docs.vercel.app](https://mindfry-docs.vercel.app)
 
-### Packages
+## Protocol
 
-| Package                                                                | Description           |
-| :--------------------------------------------------------------------- | :-------------------- |
-| [`@mindfry/client`](https://www.npmjs.com/package/@mindfry/client)     | High-level client API |
-| [`@mindfry/protocol`](https://www.npmjs.com/package/@mindfry/protocol) | Low-level MFBP codec  |
-
-## Features
-
-All SDKs implement the same core API:
+All SDKs implement [MFBP (MindFry Binary Protocol)](./docs/MFBP.md):
 
 - 🧠 **Lineage** — Create, stimulate, query ephemeral memories
 - 🔗 **Bond** — Connect memories with weighted relationships
@@ -65,14 +58,14 @@ All SDKs implement the same core API:
 
 ## Related
 
-- [MindFry Core](https://github.com/laphilosophia/mindfry) — Rust engine
+- [MindFry Core](https://github.com/cluster-127/mindfry) — Rust engine
 - [Documentation](https://mindfry-docs.vercel.app) — Full docs
 - [crates.io](https://crates.io/crates/mindfry) — Rust package
 
 ## Contributing
 
-Want to add a new language SDK? See the TypeScript implementation in `packages/` as reference. All SDKs should implement the MFBP protocol and provide the same core API surface.
+Want to add a new language SDK? See the TypeScript implementation in `ts/` as reference. All SDKs should implement the [MFBP protocol](./docs/MFBP.md).
 
 ## License
 
-Apache-2.0 © [Erdem Arslan](https://github.com/laphilosophia)
+Apache-2.0 © [Erdem Arslan](https://github.com/cluster-127)

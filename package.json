@@ -1,10 +1,10 @@
 {
   "name": "mindfry",
   "version": "0.4.0",
-  "description": "Official SDK packages for MindFry - The World's First Ephemeral Graph Database",
+  "description": "Official SDK packages for MindFry - Memory with a Conscience.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/laphilosophia/mindfry-sdk"
+    "url": "https://github.com/cluster-127/mindfry-sdk"
   },
   "author": "Erdem Arslan <erdemarslan@ymail.com>",
   "license": "Apache-2.0",

@@ -1,7 +1,7 @@
 {
-  "name": "@mindfry/client",
-  "version": "0.4.0",
-  "description": "Official TypeScript client for MindFry - The World's First Ephemeral Graph Database",
+  "name": "@mindfry/sdk",
+  "version": "1.0.0",
+  "description": "Official TypeScript SDK for MindFry - Memory with a Conscience.",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -9,6 +9,10 @@
     ".": {
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
+    },
+    "./protocol": {
+      "import": "./dist/protocol/index.js",
+      "types": "./dist/protocol/index.d.ts"
     }
   },
   "files": [
@@ -19,20 +23,12 @@
     "clean": "rm -rf dist",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:integration": "vitest run --config vitest.integration.config.ts"
-  },
-  "dependencies": {
-    "@mindfry/protocol": "workspace:*"
-  },
-  "devDependencies": {
-    "@types/node": "^22.0.0",
-    "typescript": "^5.7.0",
-    "vitest": "^3.0.0"
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/cluster-127/mindfry-sdk",
-    "directory": "packages/client"
+    "directory": "ts"
   },
   "keywords": [
     "mindfry",
@@ -40,13 +36,22 @@
     "graph",
     "ephemeral",
     "cognitive",
-    "client"
+    "sdk",
+    "typescript",
+    "mfbp",
+    "protocol"
   ],
+  "author": "Erdem Arslan <erdemarslan@ymail.com>",
   "license": "Apache-2.0",
   "publishConfig": {
     "access": "public"
   },
   "engines": {
     "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
   }
 }

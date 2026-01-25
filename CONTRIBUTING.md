@@ -86,8 +86,8 @@ We welcome SDK contributions for other languages! Please:
 
 ## Questions?
 
-- Open a [Discussion](https://github.com/laphilosophia/mindfry-sdk/discussions) for questions
-- Check existing [Issues](https://github.com/laphilosophia/mindfry-sdk/issues) before opening a new one
+- Open a [Discussion](https://github.com/cluster-127/mindfry-sdk/discussions) for questions
+- Check existing [Issues](https://github.com/cluster-127/mindfry-sdk/issues) before opening a new one
 
 ## License
 
