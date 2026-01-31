@@ -6,7 +6,7 @@ let horisontal = false;
 let verticalDirction = 0;
 let horisontalDirection = 0;
 
-let speed = 8;
+let speed = 5;
 
 $(document).ready(function(){
     play();
@@ -18,7 +18,8 @@ $(document).ready(function(){
 function lifeCicle() { 
     
     lifeCicleVar = setInterval(function(){ 
-        if(horisontal){
+        if(horisontal && playerCoalisionDetector()){
+            
             let leftOfset = $(".player")[0].offsetLeft + horisontalDirection * speed;
 
             if(leftOfset < 3){
@@ -34,7 +35,7 @@ function lifeCicle() {
             }
 
             $(".player").css("left", leftOfset + "px")  
-        }else if(vertical){
+        }else if(vertical && playerCoalisionDetector()){
             let topOfset = $(".player")[0].offsetTop + verticalDirction * speed;
 
             if(topOfset < 3){
@@ -52,7 +53,7 @@ function lifeCicle() {
             $(".player").css("top", topOfset + "px")  
         }
 
-     }, 500);
+     }, 50);
 
      playerMovment();
 };
@@ -69,6 +70,7 @@ function play() {
 /** Function that register that input file is lost focus and pauses the game */
 function stop() {
     $(".player-controle").on("focusout", function(){
+        console.log("stoped")
         clearInterval(lifeCicleVar);
     });
 }
@@ -81,21 +83,25 @@ function playerMovment() {
         switch(event.originalEvent.key.toLowerCase()){
             case "a":
                 horisontalDirection = -1;
+                verticalDirction = 0;
                 horisontal = true;
                 vertical = false;
                 break;
             case "d":
                 horisontalDirection = 1;
+                verticalDirction = 0;
                 horisontal = true;
                 vertical = false;
                 break;
             case "w":
                 verticalDirction = -1;
+                horisontalDirection = 0;
                 vertical = true;
                 horisontal = false;
                 break;
             case "s":
                 verticalDirction = 1;
+                horisontalDirection = 0;
                 vertical = true;
                 horisontal = false;
                 break;
@@ -103,4 +109,39 @@ function playerMovment() {
                 break;
         }
     });
+}
+
+/** Function that calculates player position and check if player is going to pass over some of obstacles */
+function playerCoalisionDetector(){
+    let player = $(".player")[0];
+
+    let colided = true;
+
+    $(".obstacle").each(function(i, element){
+
+        let playerTopPositionMin = player.offsetTop;
+        let playerTopPositionMax = player.offsetTop + player.clientHeight;
+        let playerLeftPositionMin = player.offsetLeft;
+        let playerLeftPositionMax = player.offsetLeft + player.clientWidth;
+
+        let elementTopPositionMin = element.offsetTop;
+        let elementTopPositionMax = element.offsetTop + element.clientHeight;
+        let elementLeftPositionMin = element.offsetLeft;
+        let elementLeftPositionMax = element.offsetLeft + element.clientWidth;
+        
+        if((((elementTopPositionMin < playerTopPositionMin + verticalDirction * speed)
+        &&(playerTopPositionMin < elementTopPositionMax - verticalDirction * speed) 
+        || (elementTopPositionMin < playerTopPositionMax + verticalDirction * speed) 
+        && (playerTopPositionMax < elementTopPositionMax - verticalDirction * speed))
+         && ((elementLeftPositionMin < playerLeftPositionMin  + horisontalDirection * speed) 
+         && ( playerLeftPositionMin < elementLeftPositionMax  - horisontalDirection * speed)
+        || (elementLeftPositionMin < playerLeftPositionMax  + horisontalDirection * speed)
+        && (playerLeftPositionMax < elementLeftPositionMax  - horisontalDirection * speed))))
+         {
+            colided = false
+         }
+
+    });
+
+    return colided;
 }

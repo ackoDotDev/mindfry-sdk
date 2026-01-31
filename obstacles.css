@@ -162,69 +162,128 @@
 .container .field-wrapper .obstacles .obst-20{
     width: 88px;
     height: 10px;
-    top: 428px;
+    top: 380px;
     left: 152px;
 }
 
 .container .field-wrapper .obstacles .obst-21{
-    width: 88px;
-    height: 10px;
-    top: 428px;
-    left: 152px;
+    width: 34px;
+    height: 55px;
+    top: 28px;
+    left: 28px;
+    border: 5px solid #0000ff;
+    background: unset;
 }
 
 .container .field-wrapper .obstacles .obst-22{
-    width: 88px;
-    height: 10px;
-    top: 428px;
-    left: 152px;
+    width: 10px;
+    height: 93px;
+    top: 0;
+    left: 192px;
 }
 
 .container .field-wrapper .obstacles .obst-23{
-    width: 88px;
+    width: 44px;
     height: 10px;
-    top: 428px;
-    left: 152px;
+    top: 120px;
+    left: 28px;
 }
 
 .container .field-wrapper .obstacles .obst-24{
-    width: 88px;
-    height: 10px;
-    top: 428px;
-    left: 152px;
+    width: 41px;
+    height: 55px;
+    top: 28px;
+    left: 113px;
+    border: 5px solid #0000ff;
+    background: unset;
 }
 
 .container .field-wrapper .obstacles .obst-25{
-    width: 88px;
-    height: 10px;
-    top: 428px;
-    left: 152px;
+    width: 42px;
+    height: 55px;
+    top: 28px;
+    left: 230px;
+    border: 5px solid #0000ff;
+    background: unset;
 }
 
 .container .field-wrapper .obstacles .obst-26{
-    width: 88px;
-    height: 10px;
-    top: 428px;
-    left: 152px;
+    width: 34px;
+    height: 55px;
+    top: 28px;
+    left: 322px;
+    border: 5px solid #0000ff;
+    background: unset;
 }
 
 .container .field-wrapper .obstacles .obst-27{
-    width: 88px;
-    height: 10px;
-    top: 428px;
-    left: 152px;
+    width: 10px;
+    height: 70px;
+    top: 268px;
+    left: 272px;
 }
 
 .container .field-wrapper .obstacles .obst-28{
-    width: 88px;
+    width: 170px;
     height: 10px;
-    top: 428px;
-    left: 152px;
+    top: 338px;
+    left: 112px;
 }
 
 .container .field-wrapper .obstacles .obst-29{
-    width: 88px;
-    height: 10px;
-    top: 428px;
-    left: 152px;
+    width: 10px;
+    height: 70px;
+    top: 268px;
+    left: 112px;
 }
+
+.container .field-wrapper .obstacles .obst-30{
+    width: 65px;
+    height: 10px;
+    top: 258px;
+    left: 112px;
+}
+
+.container .field-wrapper .obstacles .obst-31{
+    width: 65px;
+    height: 10px;
+    top: 258px;
+    left: 217px;
+}
+
+.container .field-wrapper .obstacles .obst-32{
+    width: 10px;
+    height: 70px;
+    top: 268px;
+    left: 112px;
+}
+
+.container .field-wrapper .obstacles .obst-33{
+    width: 10px;
+    height: 70px;
+    top: 268px;
+    left: 112px;
+}
+
+.container .field-wrapper .obstacles .obst-29{
+    width: 10px;
+    height: 70px;
+    top: 268px;
+    left: 112px;
+}
+
+.container .field-wrapper .obstacles .obst-29{
+    width: 10px;
+    height: 70px;
+    top: 268px;
+    left: 112px;
+}
+
+.container .field-wrapper .obstacles .obst-29{
+    width: 10px;
+    height: 70px;
+    top: 268px;
+    left: 112px;
+}
+
+
